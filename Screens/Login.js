@@ -9,7 +9,7 @@ const Login = ({navigation}) => {
 
         <View style={styleSheet.titleContainer}>
         <Text style={styleSheet.titleStyle}>Hawk Express Tracker</Text>
-        <Text style={styleSheet.subtitleLabel}>Login</Text>
+        <Text style={styleSheet.subtitleLabel}>Account Login</Text>
           
         </View>
 

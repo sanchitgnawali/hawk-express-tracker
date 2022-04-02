@@ -36,7 +36,7 @@ const styleSheet = StyleSheet.create ({
     },
     subtitleLabel: {
         fontSize: 15,
-        fontWeight: '500',
+        fontWeight: 'bold',
         marginTop: 10,
         color: '#838383'
       },

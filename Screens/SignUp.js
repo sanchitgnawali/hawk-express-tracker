@@ -23,7 +23,7 @@ const SignUp = ({navigation}) => {
             <TextInput placeholder='********' style={styleSheet.input} secureTextEntry/>
             
             <Text style={styleSheet.inputLabel}>Confirm Password</Text>
-        <   TextInput placeholder='********' style={styleSheet.input} secureTextEntry/>
+            <TextInput placeholder='********' style={styleSheet.input} secureTextEntry/>
         </View>
         
         <View style={styleSheet.buttonContainer}>
