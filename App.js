@@ -8,7 +8,7 @@ import uhclStyle from './mapStyle';
 const deltaImage = require("./img/delta-building.jpg");
 const bayouImage = require("./img/bayou-building.jpg");
 
-// comment update
+// comment update 4-2-22
 // Ignore log notification by message:
 LogBox.ignoreLogs(['Remote debugger']);
 
