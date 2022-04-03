@@ -5,7 +5,7 @@ import {styleSheet} from "../styles/accountStyle"
 const SignUp = ({navigation}) => {
   return (
     <ScrollView contentContainerStyle={styleSheet.container}>
-        <Image source={require('../assets/hawkExpressLogo.png')} style={styleSheet.image}/>
+        <Image source={require('../images/hawkExpressLogo.png')} style={styleSheet.image}/>
 
         <View style={styleSheet.titleContainer}>
         <Text style={styleSheet.titleStyle}>Hawk Express Tracker</Text>
@@ -27,7 +27,7 @@ const SignUp = ({navigation}) => {
         </View>
         
         <View style={styleSheet.buttonContainer}>
-            <TouchableOpacity onPress={()=>navigation.navigate('LoginPage')} style={styleSheet.button}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Login')} style={styleSheet.button}>
                 <Text style={styleSheet.buttonText}>Create Account</Text>
             </TouchableOpacity> 
         </View>
@@ -35,7 +35,7 @@ const SignUp = ({navigation}) => {
         <Text style={styleSheet.subtitleStyle}>Already have an account? {' '}
           <Text
             style={{color:'#0078AE'}}
-            onPress={()=>navigation.navigate('LoginPage')}>
+            onPress={()=>navigation.navigate('Login')}>
             Login
           </Text>
         </Text>

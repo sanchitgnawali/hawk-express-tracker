@@ -16,14 +16,14 @@ const styleSheet = StyleSheet.create ({
     },
     image: {
         //default res w:270, h:150
-        height: 120,
+        height: 150,
         width: 240,
         marginTop: 50,
         //marginBottom: 30,
         resizeMode: 'center'
     },
     titleContainer: {
-        margin: 20,
+        margin: 0,
         width: '80%',
         alignItems: 'center',
     },
