@@ -22,7 +22,7 @@ const Login = ({navigation}) => {
         </View>
 
         <View style={styleSheet.buttonContainer}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Details')} style={styleSheet.button}>
+            <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')} style={styleSheet.button}>
                 <Text style={styleSheet.buttonText}>Login</Text>
             </TouchableOpacity>
 

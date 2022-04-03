@@ -7,7 +7,7 @@ const DetailScreen = ({navigation}) => {
       <Text style={styles.title}>Detail Screen</Text>
       <Pressable
         style={styles.buttonStyle}
-        onPress={() => navigation.navigate('Login')}>
+        onPress={() => navigation.navigate('HomeScreen')}>
         <Text style={styles.buttonTextStyle}>Go To The Map Screen</Text>
       </Pressable>
     </View>

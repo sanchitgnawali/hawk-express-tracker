@@ -6,6 +6,7 @@ import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import DetailScreen from '../screens/DetailScreen';
 import Profile from '../screens/Profile';
+import HawkExpressTracker from '../screens/HomeScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ const RootNavigator = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Details" component={DetailScreen} />
+        <Stack.Screen name="HomeScreen" component={HawkExpressTracker} />
         <Stack.Screen name="Signup" component={Signup} />
       </Stack.Navigator>
     </NavigationContainer>
