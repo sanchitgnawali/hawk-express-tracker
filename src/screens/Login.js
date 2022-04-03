@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, Linking} from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import {styleSheet} from "../styles/accountStyle"
 
 const Login = ({navigation}) => {
