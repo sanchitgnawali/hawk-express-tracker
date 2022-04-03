@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView} from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import {styleSheet} from "../styles/accountStyle"
+import Firebase from '../config/firebase';
 
 const SignUp = ({navigation}) => {
   return (
