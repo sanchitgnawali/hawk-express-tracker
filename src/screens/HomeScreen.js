@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
   Touchable,
   LogBox,
-} from "react-native";import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps'
+} from "react-native";
+import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps'
 
 //Files
 import uhclStyle from "../styles/mapStyle";
