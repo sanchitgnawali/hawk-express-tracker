@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "hawk-tracker",
+    "name": "Hawk Express Tracker",
     "slug": "hawk-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/hawk-logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/UHCLsplash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#018744"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,8 +21,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/hawk-logo.png",
+        "backgroundColor": "#018744"
       }
     },
     "web": {
