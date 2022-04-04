@@ -22,7 +22,7 @@ export const useSignup = () => {
         email,
         password
       );
-      console.log(response.user);
+
       /*
        * if the response is null, throw an error
        */

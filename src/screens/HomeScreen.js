@@ -1,18 +1,14 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
-  Button,
   Text,
   View,
   Image,
   Dimensions,
   TouchableOpacity,
-  Touchable,
-  LogBox,
 } from "react-native";
 import { auth } from "../../firebase";
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
-import * as navigation from "@react-navigation/native";
 
 //Files
 import uhclStyle from "../styles/mapStyle";
@@ -27,6 +23,23 @@ const handleSignout = () => {
 };
 
 export default HawkExpressTracker = ({ navigation }) => {
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged(user => {
+  //     if (!user) {
+  //       navigation.replace("Login");
+  //     }
+  //   });
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (!user) {
+        navigation.replace("Login");
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
   return (
     <>
       <View style={styles.mapContainer}>
