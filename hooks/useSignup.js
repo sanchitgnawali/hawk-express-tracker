@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { auth } from "../firebase";
+import { useAuthContext } from "./useAuthContext";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
+  const { dispatch } = useAuthContext();
 
   const signup = async (email, password, displayName) => {
     // before signup set error to null
@@ -20,7 +22,7 @@ export const useSignup = () => {
         email,
         password
       );
-
+      console.log(response.user);
       /*
        * if the response is null, throw an error
        */
@@ -30,6 +32,8 @@ export const useSignup = () => {
 
       // add display name to the user profile on successful signup
       await response.user.updateProfile({ displayName });
+
+      dispatch({ type: "LOGIN", payload: response.user });
 
       /*
        * on successful signup set error to null and

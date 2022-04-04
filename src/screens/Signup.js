@@ -9,14 +9,17 @@ import {
 } from "react-native";
 import React, { useState, useContext } from "react";
 import { styleSheet } from "../styles/accountStyle";
-import { auth } from "../../firebase";
+// import { auth } from "../../firebase";
+import { useSignup } from "../../hooks/useSignup";
 
 const SignUp = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const { signup, error, isPending } = useSignup();
 
   const handleSignup = () => {
+    /*
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(navigation.navigate("Login"))
@@ -25,6 +28,8 @@ const SignUp = ({ navigation }) => {
       //  console.log(user.email);
       // })
       .catch((error) => alert(error.message));
+      */
+    signup(email, password, name);
   };
 
   return (
