@@ -12,17 +12,17 @@ const firebaseConfig = {
   storageBucket: "hawk-express-tracker.appspot.com",
   messagingSenderId: "742081657848",
   appId: "1:742081657848:web:9b95bba45d47e92900340d",
-  measurementId: "G-F5ZZNQ8PKX"
+  measurementId: "G-F5ZZNQ8PKX",
 };
 
 // Initialize Firebase
 let app;
-if (firebase.apps.length === 0){
-    app = firebase.initializeApp(firebaseConfig);
+if (firebase.apps.length === 0) {
+  app = firebase.initializeApp(firebaseConfig);
 } else {
-    app = firebase.app()
+  app = firebase.app();
 }
 
-const auth = firebase.auth()
+const auth = firebase.auth();
 
 export { auth };
