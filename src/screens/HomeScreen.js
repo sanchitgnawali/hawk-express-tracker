@@ -10,14 +10,28 @@ import {
   Touchable,
   LogBox,
 } from "react-native";
+import { auth } from '../../firebase'
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps'
+import * as navigation from '@react-navigation/native';
 
 //Files
 import uhclStyle from "../styles/mapStyle";
 
+const imageWidth = Dimensions.get("window").width;
+
+const handleSignout = () => {
+    auth
+      .signOut()
+    // need to get navigation back to login working for here
+      .catch(error => alert(error.message))
+}
+
 export default class HawkExpressTracker extends Component {
+  
+
   render() {
     return (
+      <View style = {styles.mapContainer}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
@@ -194,21 +208,50 @@ export default class HawkExpressTracker extends Component {
           />
         </Marker>
       </MapView>
+      <View style={styles.signOutContainer}>
+          <TouchableOpacity
+            onPress={handleSignout}
+            style={styles.button}
+            >
+              <Text style={styles.buttonText}>Sign Out</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
-  }
+  } 
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mapContainer: {
+    backgroundColor: "#0782F9"
+  },
+  signOutContainer:{
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1
+  },
+  button: {
+    backgroundColor: '#0782F9',
+    width: '25%',
+    padding: 10,
+    borderRadius: 10,
+    position: "absolute",
+    bottom: 15,
+    right: 10
+  },
+  buttonText:{
+    color: 'white',
+    alignItems: 'center',
+    fontWeight: '700',
+    fontSize: 16,
   },
   title: {
     fontSize: 40,
   },
-  map: {
-    height: "70%",
+ map: {
+    height: imageWidth*(5/3),
+    zIndex: -1
   },
   markerImage: {
     width: 30,
