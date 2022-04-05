@@ -1,9 +1,12 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { auth } from "../../firebase";
-
+import { useLogout } from "../../hooks/useLogout";
 export default Profile = ({ navigation }) => {
+  const { logout } = useLogout();
+
   const handleSignout = () => {
-    auth.signOut().catch((error) => alert(error.message));
+    logout();
+    // auth.signOut().catch((error) => alert(error.message));
   };
 
   return (
