@@ -23,6 +23,7 @@ const RootNavigator = () => {
           <Stack.Screen name="Details" component={DetailScreen} />
           <Stack.Screen name="HomeScreen" component={HawkExpressTracker} />
           <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContextProvider>
