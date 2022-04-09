@@ -86,7 +86,7 @@ export default MapComponent = () => {
         initialRegion={region}
         showUserLocation
       >
-        <MapViewDirections
+        {/* <MapViewDirections
           origin={places[0]}
           destination={places[1]}
           apikey={"INSERT KEY"} // insert your API Key here
@@ -173,7 +173,7 @@ export default MapComponent = () => {
           strokeWidth={4}
           strokeColor="#0078AE"
           precision="high"
-        />
+        /> */}
 
 
 

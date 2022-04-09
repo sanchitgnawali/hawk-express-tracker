@@ -6,6 +6,7 @@ import Login from "../screens/Login";
 import Signup from "../screens/Signup";
 import DetailScreen from "../screens/DetailScreen";
 import Profile from "../screens/Profile";
+import DestinationSelection from "../screens/DestinationsScreen"
 import HawkExpressTracker from "../screens/HomeScreen";
 import { AuthContextProvider } from "../../context/AuthContext";
 
@@ -24,6 +25,7 @@ const RootNavigator = () => {
           <Stack.Screen name="HomeScreen" component={HawkExpressTracker} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Destinations" component={DestinationSelection} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContextProvider>

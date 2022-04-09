@@ -25,6 +25,14 @@ export default HawkExpressTracker = ({ navigation }) => {
         color="skyblue"
         onPress={() => navigation.navigate("Profile")}
       />
+
+      <FAB
+        style={styles.fab2}
+        small
+        icon="menu"
+        color="#0078AE"
+        onPress={() => navigation.navigate("Destinations")}
+      />
       <MapComponent />
       <HomeControl />
     </View>
@@ -42,5 +50,12 @@ const styles = StyleSheet.create({
     top: 30,
     zIndex: 10,
     right: 0,
+  },
+  fab2: {
+    position: "absolute",
+    margin: 16,
+    bottom: 20,
+    zIndex: 10,
+    right: 15,
   },
 });
