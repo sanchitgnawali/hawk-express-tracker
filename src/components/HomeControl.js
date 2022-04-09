@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 export default HomeControl = () => {
   return (
     <View style={styles.homeControl}>
-      <Text style={styles.text}>Ready To Go?</Text>
+      <Text style={styles.text}>Ready To Go? Press Me!</Text>
 
-      <TouchableOpacity style={styles.button}>
+      {/* <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Select Destination</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };
