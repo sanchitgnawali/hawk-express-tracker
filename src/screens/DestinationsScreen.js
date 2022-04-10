@@ -67,16 +67,12 @@ export default DestinationSelection = ({ navigation }) => {
           />
         </View>
       </View>
-
-    
-      <View>
       <TouchableOpacity 
           style={styles.button}
           onPress={() => navigation.navigate("HomeScreen")}
         >
               <Text style={styleSheet.buttonText}>Return to Map</Text>
       </TouchableOpacity> 
-      </View>
 
     </View>
     
@@ -99,7 +95,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 54,
-    marginTop: 225,
+    marginTop: 250,
     width: 300,
     borderRadius: 8,
     alignItems: 'center',
