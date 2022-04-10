@@ -19,63 +19,6 @@ var region = {
   longitudeDelta: 0.015,
 };
 
-const places = [
-  {
-    latitude: 29.561950133,
-    longitude: -95.115615515,
-  },
-
-  {
-    latitude: 29.552874933427443,
-    longitude: -95.12420096370195,
-  },
-
-  {
-    latitude: 29.569863566531023,
-    longitude: -95.11018505215024
-  },
-
-  { 
-    latitude: 29.574083302941812, 
-    longitude: -95.10754740123505 
-  },
-
-  { 
-    latitude: 29.57689945321822, 
-    longitude: -95.10630695303462 
-  },
-
-  { 
-    latitude: 29.578042477429793, 
-    longitude: -95.1028376873912 
-  },
-
-  { 
-    latitude: 29.58665434643349, 
-    longitude: -95.0949528817226 
-  },
-
-  { latitude: 29.585956169582044, 
-    longitude: -95.09822634535767 
-  },
-
-  { latitude: 29.58533148291235, 
-    longitude: -95.09792277159933 
-  },
-
-  { 
-    latitude: 29.584092478872343, 
-    longitude: -95.09768513897552 
-  },
-
-  { 
-    latitude: 29.582925, 
-    longitude: -95.097646 
-  },
-];
-
-// const imageWidth = Dimensions.get("window").width;
-
 export default MapComponent = () => {
   return (
     <View style={styles.mapContainer}>
@@ -86,98 +29,7 @@ export default MapComponent = () => {
         initialRegion={region}
         showUserLocation
       >
-        {/* <MapViewDirections
-          origin={places[0]}
-          destination={places[1]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[1]}
-          destination={places[2]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[2]}
-          destination={places[3]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[3]}
-          destination={places[4]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[4]}
-          destination={places[5]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[5]}
-          destination={places[6]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[6]}
-          destination={places[7]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[7]}
-          destination={places[8]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[8]}
-          destination={places[9]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[9]}
-          destination={places[10]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        />
-        <MapViewDirections
-          origin={places[10]}
-          destination={places[11]}
-          apikey={"INSERT KEY"} // insert your API Key here
-          strokeWidth={4}
-          strokeColor="#0078AE"
-          precision="high"
-        /> */}
-
-
-
-
+{/*       
         <Marker
           coordinate={{
             latitude: 29.561950133,
@@ -338,17 +190,7 @@ export default MapComponent = () => {
             source={require("../images/hawk-logo.png")}
           />
         </Marker>
-
-        <Marker coordinate={{ latitude: 29.582925, longitude: -95.097646 }}>
-          <Callout>
-            <Image source={require("../images/bayou-building.jpg")} />
-            <Text>UHCL Bayou Student Entrance (East)</Text>
-          </Callout>
-          <Image
-            style={styles.markerImage}
-            source={require("../images/hawk-logo.png")}
-          />
-        </Marker>
+    */}
       </MapView>
     </View>
   );

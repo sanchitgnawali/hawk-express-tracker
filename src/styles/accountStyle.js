@@ -54,6 +54,7 @@ const styleSheet = StyleSheet.create ({
     },
     inputContainer: {
         width: '80%',
+        margin: 10
         //marginTop: -500,
     },
     input: {
@@ -75,8 +76,8 @@ const styleSheet = StyleSheet.create ({
         marginTop: 20,
     },
     button: {
-        backgroundColor: '#018744',
-        //width: '100%',
+        backgroundColor: '#0078AE',
+                //width: '100%',
         width: '80%',
         padding: 15,
         borderRadius: 10,
