@@ -35,14 +35,14 @@ export default DestinationSelection = ({ navigation }) => {
   return (
     <View style={styleSheet.container}>
       <Image
-        source={require("../images/hawkExpressLogo.png")}
-        style={styleSheet.image}
+        source={require("../images/hawk-logo.png")}
+        style={styles.image}
       />
 
       <View style={styleSheet.titleContainer}>
         <Text style={styleSheet.titleStyle}>Hawk Express Tracker</Text>
         <Text style={styleSheet.subtitleLabel}>
-          Please Select Your Destination
+          Select Your Destination
         </Text>
       </View>
 
@@ -68,16 +68,23 @@ export default DestinationSelection = ({ navigation }) => {
         </View>
       </View>
       <TouchableOpacity 
-          style={[styleSheet.button,styleSheet.marginTest]}
+          style={styles.button}
           onPress={() => navigation.navigate("HomeScreen")}
         >
-                <Text style={styleSheet.buttonText}>Return to Map</Text>
+              <Text style={styleSheet.buttonText}>Return to Map</Text>
       </TouchableOpacity> 
+
     </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
+  image: {
+    height: 330,
+    width: 330,
+    marginTop: 30
+  },
   profileContainer: {
     flex: 1,
     alignSelf: "center",
@@ -87,14 +94,20 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   button: {
-    backgroundColor: "#0782F9",
-    width: "25%",
-    padding: 10,
-    borderRadius: 10,
-    justifyContent: 'space-between',
-  },
-  marginTest: {
-    marginTop: 20,
+    height: 54,
+    marginTop: 250,
+    width: 300,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#0078AE',
+    shadowRadius: 5,
+    shadowOpacity: 0.7,
+    shadowColor: '#0078AE',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
   },
   buttonText: {
     color: "white",
