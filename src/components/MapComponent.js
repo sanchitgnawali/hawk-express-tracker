@@ -21,6 +21,7 @@ var region = {
 
 export default MapComponent = () => {
   return (
+    
     <View style={styles.mapContainer}>
       <MapView
         provider={PROVIDER_GOOGLE}
