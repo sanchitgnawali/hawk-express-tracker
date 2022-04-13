@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { useEffect } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
-import { auth } from "./../../firebase";
+import { auth, db } from "./../../firebase";
 //Files
 import uhclStyle from "../styles/mapStyle";
 
@@ -20,8 +21,26 @@ var region = {
 };
 
 export default MapComponent = () => {
+  useEffect(() => {
+    let ref = db.collection("driverLocation");
+
+    const unsubscribe = ref.onSnapshot(
+      (snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          // results.push({ ...doc.data(), id: doc.id });
+          console.log({ ...doc.data() });
+        });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    // unsubscribe on unmount
+    return () => unsubscribe();
+  }, []);
+
   return (
-    
     <View style={styles.mapContainer}>
       <MapView
         provider={PROVIDER_GOOGLE}
@@ -30,7 +49,7 @@ export default MapComponent = () => {
         initialRegion={region}
         showUserLocation
       >
-{/*       
+        {/*       
         <Marker
           coordinate={{
             latitude: 29.561950133,
