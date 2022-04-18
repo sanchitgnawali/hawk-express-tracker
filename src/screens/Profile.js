@@ -18,10 +18,10 @@ export default Profile = ({ navigation }) => {
 
   return (
     <ScrollView contentContainerStyle={styleSheet.container}>
-        <Image source={require('../images/hawk-logo.png')} style={styleSheet.image}/>
+        <Image source={require('../images/hawk-logo.png')} style={styles.image}/>
             <View style={styleSheet.titleContainer}>
               <Text style={styleSheet.titleStyle}>Edit Profile</Text>
-              <Text style={styleSheet.subtitleLabel}>Enter new information, then click save information to update. Leave boxes blank to keep information the same.</Text>
+              <Text style={styleSheet.subtitleLabel}>Enter new information and click "Confirm Profile Updates". Leave boxes blank to keep information the same.</Text>
             </View>
 
       <View style={styleSheet.inputContainer}>
@@ -49,6 +49,11 @@ export default Profile = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  image: {
+    height: 330,
+    width: 330,
+    marginTop: 30
+  },
   profileContainer: {
     flex: 1,
     alignSelf: "center",

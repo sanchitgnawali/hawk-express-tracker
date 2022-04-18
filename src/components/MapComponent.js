@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { auth, db } from "./../../firebase";
 //Files
 import uhclStyle from "../styles/mapStyle";
+import { GOOGLE_MAPS_API_KEY } from "../constants/MapsAPIKey";
+
+const id = "HKxoa3D5yxnbIzbe3rY9";
 
 const handleSignout = () => {
   auth
@@ -20,24 +23,64 @@ var region = {
   longitudeDelta: 0.015,
 };
 
+var busLatitude;
+var busLongitude;
+
+const coordinates = [
+  { latitude: 29.561950133, longitude: -95.115615515 },
+
+  { latitude: 29.552874933427443, longitude: -95.12420096370195 },
+
+  { latitude: 29.569863566531023, longitude: -95.11018505215024 },
+
+  { latitude: 29.574083302941812, longitude: -95.10754740123505 },
+
+  { latitude: 29.57689945321822, longitude: -95.10630695303462 },
+
+  { latitude: 29.578042477429793, longitude: -95.1028376873912 },
+
+  { latitude: 29.58665434643349, longitude: -95.0949528817226 },
+
+  { latitude: 29.585956169582044, longitude: -95.09822634535767 },
+
+  { latitude: 29.58533148291235, longitude: -95.09792277159933 },
+
+  { latitude: 29.584092478872343, longitude: -95.09768513897552 },
+
+  { latitude: 29.582925, longitude: -95.097646 },
+];
 export default MapComponent = () => {
+  const [busLong, setLong] = useState("null");
+  const [busLat, setLat] = useState("null");
+  const [error, setError] = useState("null");
+
   useEffect(() => {
     let ref = db.collection("driverLocation");
-
     const unsubscribe = ref.onSnapshot(
       (snapshot) => {
+        var busData = [];
+
         snapshot.docs.forEach((doc) => {
-          // results.push({ ...doc.data(), id: doc.id });
-          console.log({ ...doc.data() });
+          var data = doc.data();
+          var busLocation = data.busLocation;
+          busLatitude = busLocation.latitude;
+          busLongitude = busLocation.longitude;
+          console.log("Current Bus Latitude:", busLatitude);
+          console.log("Current Bus Longitude:", busLongitude);
+          setLong(busLongitude);
+          setLat(busLatitude);
         });
       },
       (error) => {
-        console.log(error);
+        setError('This is broken');
+        return;
       }
     );
 
     // unsubscribe on unmount
-    return () => unsubscribe();
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   return (
@@ -49,7 +92,21 @@ export default MapComponent = () => {
         initialRegion={region}
         showUserLocation
       >
-        {/*       
+        {busLong ? (
+          <Marker 
+          coordinate={{
+            latitude: busLat,
+            longitude: busLong,
+          }}
+          title="Real-Time Shuttle" >
+          <Image
+            source={require("../images/shuttleIcon.png")}
+          />
+          </Marker>
+        ):
+        <Text>{error}</Text>
+        }
+
         <Marker
           coordinate={{
             latitude: 29.561950133,
@@ -210,7 +267,65 @@ export default MapComponent = () => {
             source={require("../images/hawk-logo.png")}
           />
         </Marker>
-    */}
+   
+        <MapViewDirections
+          origin={coordinates[0]}
+          destination={coordinates[3]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+
+        <MapViewDirections
+          origin={coordinates[1]}
+          destination={coordinates[2]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+
+        <MapViewDirections
+          origin={coordinates[2]}
+          destination={coordinates[3]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+        <MapViewDirections
+          origin={coordinates[3]}
+          destination={coordinates[4]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+        <MapViewDirections
+          origin={coordinates[4]}
+          destination={coordinates[5]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+        <MapViewDirections
+          origin={coordinates[5]}
+          destination={coordinates[6]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+        <MapViewDirections
+          origin={coordinates[6]}
+          destination={coordinates[10]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
+        <MapViewDirections
+          origin={coordinates[10]}
+          destination={coordinates[1]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="#018744"
+        />
       </MapView>
     </View>
   );
