@@ -16,7 +16,6 @@ export default HawkExpressTracker = ({ navigation }) => {
     // auth.signOut().catch((error) => alert(error.message));
   };
 
-
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (!user) {
@@ -30,52 +29,54 @@ export default HawkExpressTracker = ({ navigation }) => {
   return (
     <Provider>
       <View style={styles.buttonContainer}>
-      <Portal>
-      <MapComponent />
-      <FAB.Group
-          open={open}
-          fabStyle={styles.fabGroup}
-          color="#0078AE"
-          icon={open ? 'bus' : 'plus'}
-          actions={[
-            {
-              icon: 'account',
-              label: 'Profile',
-              color: "#0078AE",
-              labelTextColor: "#0078AE",
-              onPress: () => navigation.navigate("Profile"),
-              small: false,
-            },
-            // {
-            //   icon: 'book',
-            //   label: 'Routes',
-            //   color: "#0078AE",
-            //   labelTextColor: "#0078AE",
-            //   onPress: () => navigation.navigate("Profile"),
-            //   small: false,
-            // },
-            {
-              icon: 'school',
-              label: 'Destinations',
-              color: "#0078AE",
-              labelTextColor: "#0078AE",
-              onPress: () => navigation.navigate("Destinations"),
-              small: false,
-            },
-            {
-              icon: 'door',
-              label: 'Sign Out',
-              color: "#0078AE",
-              labelTextColor: "#0078AE",
-              onPress: handleSignout,
-              small: false,
-            },
-          ]}
-          onStateChange={onStateChange}
-          onPress={() => {open}}
-        />
+        <Portal>
+          <MapComponent />
+          <FAB.Group
+            open={open}
+            fabStyle={styles.fabGroup}
+            color="#0078AE"
+            icon={open ? "bus" : "plus"}
+            actions={[
+              {
+                icon: "account",
+                label: "Profile",
+                color: "#0078AE",
+                labelTextColor: "#0078AE",
+                onPress: () => navigation.navigate("Profile"),
+                small: false,
+              },
+              // {
+              //   icon: 'book',
+              //   label: 'Routes',
+              //   color: "#0078AE",
+              //   labelTextColor: "#0078AE",
+              //   onPress: () => navigation.navigate("Profile"),
+              //   small: false,
+              // },
+              {
+                icon: "school",
+                label: "Destinations",
+                color: "#0078AE",
+                labelTextColor: "#0078AE",
+                onPress: () => navigation.navigate("Destinations"),
+                small: false,
+              },
+              {
+                icon: "door",
+                label: "Sign Out",
+                color: "#0078AE",
+                labelTextColor: "#0078AE",
+                onPress: handleSignout,
+                small: false,
+              },
+            ]}
+            onStateChange={onStateChange}
+            onPress={() => {
+              open;
+            }}
+          />
 
-      {/* <FAB
+          {/* <FAB
         style={styles.fab}
         small
         color="#0078AE"
@@ -91,8 +92,8 @@ export default HawkExpressTracker = ({ navigation }) => {
         color="#0078AE"
         onPress={() => navigation.navigate("Destinations")}
       /> */}
-    </Portal>
-    </View>
+        </Portal>
+      </View>
     </Provider>
   );
 };
