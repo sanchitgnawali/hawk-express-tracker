@@ -1,3 +1,5 @@
+// Created by Sean, style by Ryan
+
 import {
   StyleSheet,
   Text,

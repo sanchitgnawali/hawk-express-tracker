@@ -1,3 +1,5 @@
+// Default screen if needed to be added as placeholder. Added by Sanchit 
+
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default HomeControl = () => {
@@ -5,9 +7,6 @@ export default HomeControl = () => {
     <View style={styles.homeControl}>
       <Text style={styles.text}>Ready To Go? Press Me!</Text>
 
-      {/* <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Select Destination</Text>
-      </TouchableOpacity> */}
     </View>
   );
 };

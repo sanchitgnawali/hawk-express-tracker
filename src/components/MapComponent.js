@@ -1,18 +1,25 @@
+// Map + Bus Rendering created and managed by Sean Myerly
+// Listening from Firebase created and managed by Sanchit Gnawli 
+
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { useEffect, useState } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { auth, db } from "./../../firebase";
-//Files
+
+// Files
 import uhclStyle from "../styles/mapStyle";
 import { GOOGLE_MAPS_API_KEY } from "../constants/MapsAPIKey";
 
+// Future reference variables
 const id = "HKxoa3D5yxnbIzbe3rY9";
+var busLatitude;
+var busLongitude;
+
 
 const handleSignout = () => {
   auth
     .signOut()
-    // need to get navigation back to login working for here
     .catch((error) => alert(error.message));
 };
 
@@ -23,30 +30,18 @@ var region = {
   longitudeDelta: 0.015,
 };
 
-var busLatitude;
-var busLongitude;
-
+// stops to be rendered as API 
 const coordinates = [
   { latitude: 29.561950133, longitude: -95.115615515 },
-
   { latitude: 29.552874933427443, longitude: -95.12420096370195 },
-
   { latitude: 29.569863566531023, longitude: -95.11018505215024 },
-
   { latitude: 29.574083302941812, longitude: -95.10754740123505 },
-
   { latitude: 29.57689945321822, longitude: -95.10630695303462 },
-
   { latitude: 29.578042477429793, longitude: -95.1028376873912 },
-
   { latitude: 29.58665434643349, longitude: -95.0949528817226 },
-
   { latitude: 29.585956169582044, longitude: -95.09822634535767 },
-
   { latitude: 29.58533148291235, longitude: -95.09792277159933 },
-
   { latitude: 29.584092478872343, longitude: -95.09768513897552 },
-
   { latitude: 29.582925, longitude: -95.097646 },
 ];
 export default MapComponent = () => {
@@ -87,12 +82,13 @@ export default MapComponent = () => {
     <View style={styles.mapContainer}>
       <MapView
         provider={PROVIDER_GOOGLE}
-        style={styles.map}
+        style={styles.map} // custom map style
         customMapStyle={uhclStyle} // custom style from mapstyles.js
         initialRegion={region}
-        showUserLocation
-      >
+        showsUserLocation={true}
+      > 
         {busLong ? (
+         // Render new bus location if found
           <Marker
             coordinate={{
               latitude: busLat,
@@ -471,7 +467,6 @@ const styles = StyleSheet.create({
     borderWidth: 16,
     alignSelf: "center",
     marginTop: -0.5,
-    // marginBottom: -15
   },
   image: {
     width: 120,
@@ -507,7 +502,6 @@ const styles = StyleSheet.create({
     fontSize: 40,
   },
   map: {
-    // height: imageWidth * (5 / 3),
     height: "100%",
     zIndex: -1,
   },
@@ -516,6 +510,5 @@ const styles = StyleSheet.create({
     height: 30,
   },
   calloutCustomization: {
-    // Hold
   },
 });

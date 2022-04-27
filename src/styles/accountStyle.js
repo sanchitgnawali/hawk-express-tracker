@@ -1,3 +1,5 @@
+// Styles made by Ryan
+
 import { StyleSheet } from "react-native";
 
 const styleSheet = StyleSheet.create ({

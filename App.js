@@ -1,3 +1,5 @@
+// Core app files references to the navigator
+
 import "react-native-gesture-handler";
 import React from "react";
 import { AuthContextProvider } from "./context/AuthContext";

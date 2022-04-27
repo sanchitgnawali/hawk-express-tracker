@@ -1,3 +1,6 @@
+// Screen created by Ryan and Jeff
+// Firebase hooks created by Sanchit
+
 import {
   StyleSheet,
   Text,

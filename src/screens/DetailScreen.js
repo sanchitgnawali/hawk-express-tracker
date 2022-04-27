@@ -1,3 +1,5 @@
+// Placeholder page added for refrence in case required to add a ew screen.
+
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 

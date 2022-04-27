@@ -1,3 +1,7 @@
+// Screen created by Michael
+// Firebase hooks created by Sanchit
+// Logic for validation by Manish 
+
 import {
   Text,
   View,

@@ -1,3 +1,5 @@
+// Style for map made by Sean
+
 var uhclStyle = [
   {
     elementType: "geometry",

@@ -1,3 +1,5 @@
+// All team members contributed to adding their files for reference.
+
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -14,10 +16,6 @@ import { AuthContextProvider } from "../../context/AuthContext";
 const Stack = createNativeStackNavigator();
 const RootNavigator = () => {
   return (
-    /*
-     * The AuthContextProvider wraps the whole app and
-     * allows to maintain the  app state
-     */
     <AuthContextProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -35,3 +33,8 @@ const RootNavigator = () => {
 };
 
 export default RootNavigator;
+
+
+
+
+
